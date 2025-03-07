@@ -1,0 +1,63 @@
+{
+  "transactions": [
+    {
+      "id": "1",
+      "description": "Aluguel",
+      "price": -100000,
+      "dueDate": "2024-04-17",
+      "status": "pago"
+    }
+  ],
+  "posts": [
+    {
+      "id": "1",
+      "title": "Como economizar dinheiro",
+      "content": "Aqui estão algumas dicas úteis para economizar dinheiro: 1. Faça um orçamento mensal. 2. Corte gastos desnecessários. 3. Automatize suas economias. 4. Evite compras por impulso. 5. Pesquise e compare preços antes de comprar."
+    },
+    {
+      "id": "2",
+      "title": "Investindo para iniciantes",
+      "content": "Se você é novo no mundo dos investimentos, comece com investimentos de baixo risco, como fundos de índice ou títulos do governo. Aprenda sobre diversificação e não coloque todos os ovos na mesma cesta. Mantenha-se atualizado sobre o mercado financeiro e consulte um consultor financeiro se necessário."
+    },
+    {
+      "id": "3",
+      "title": "Planejando a aposentadoria",
+      "content": "Planejar a aposentadoria é essencial para garantir um futuro financeiramente seguro. Comece cedo e invista consistentemente em um plano de aposentadoria, como um IRA ou 401(k). Considere suas despesas esperadas na aposentadoria e ajuste seu plano de investimento de acordo."
+    },
+    {
+      "id": "4",
+      "title": "Dicas para reduzir dívidas",
+      "content": "Ter dívidas pode ser estressante, mas existem maneiras de reduzi-las. Priorize o pagamento das dívidas com juros mais altos primeiro. Negocie com credores por taxas de juros mais baixas ou planos de pagamento. Considere a consolidação de dívidas para simplificar os pagamentos."
+    },
+    {
+      "id": "5",
+      "title": "Entendendo o mercado de ações",
+      "content": "Investir no mercado de ações pode ser lucrativo, mas também envolve riscos. Pesquise empresas antes de investir nelas. Acompanhe as tendências do mercado e esteja preparado para períodos de volatilidade. Mantenha uma estratégia de investimento de longo prazo e não se deixe influenciar por movimentos de curto prazo."
+    },
+    {
+      "id": "6",
+      "title": "Orçamento para famílias",
+      "content": "Criar um orçamento familiar é fundamental para controlar as finanças. Registre todas as receitas e despesas mensais. Identifique áreas onde você pode cortar gastos e estabeleça metas realistas de economia. Reavalie o orçamento regularmente e faça ajustes conforme necessário."
+    },
+    {
+      "id": "7",
+      "title": "Como começar a investir com pouco dinheiro",
+      "content": "Você não precisa de muito dinheiro para começar a investir. Considere investimentos de baixo custo, como fundos de índice ou aplicativos de microinvestimento. Automatize suas economias direcionando uma porcentagem de sua renda para investimentos regularmente. Aproveite o poder dos juros compostos e seja paciente."
+    },
+    {
+      "id": "8",
+      "title": "Gerenciando despesas pessoais",
+      "content": "Manter o controle das despesas pessoais é essencial para uma saúde financeira sólida. Crie categorias de gastos e acompanhe todas as despesas. Identifique áreas onde você pode reduzir gastos e estabeleça um limite para despesas discricionárias. Esteja preparado para imprevistos mantendo um fundo de emergência."
+    },
+    {
+      "id": "9",
+      "title": "Estratégias para pagar dívidas de cartão de crédito",
+      "content": "Dívidas de cartão de crédito podem se acumular rapidamente devido aos altos juros. Crie um plano para pagar suas dívidas, priorizando aquelas com as taxas de juros mais altas. Considere transferir saldos para cartões com taxas de juros mais baixas. Evite fazer mais compras com cartão de crédito até que suas dívidas sejam pagas."
+    },
+    {
+      "id": "10",
+      "title": "Investindo em imóveis",
+      "content": "O investimento em imóveis pode ser uma excelente maneira de construir riqueza a longo prazo. Faça uma pesquisa cuidadosa do mercado imobiliário e selecione propriedades com potencial de valorização. Considere os custos adicionais, como manutenção e impostos, ao calcular o retorno do investimento. Diversifique seu portfólio investindo em diferentes tipos de propriedades."
+    }
+  ]
+}
