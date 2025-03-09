@@ -3,3 +3,9 @@ export type TPost = {
   title: string;
   content: string;
 };
+
+export type TPostProps = {
+  params: {
+    id: string;
+  };
+};

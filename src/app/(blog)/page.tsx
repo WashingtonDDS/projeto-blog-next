@@ -10,25 +10,18 @@ const getData = async () => {
 };
 
 export default async function Blog() {
-  const posts: TPost[] = await getData();
+  const posts: TPost[] = (await getData()) as TPost[];
   return (
     <div className="py-6 lg:py-12">
       <div className="grid gap-6 px-4 mx-auto md:grid-cols-2 md:px-6 lg:grid-cols-2xl max-w-6xl">
         {posts.map((item) => (
           <div className="space-y-2" key={item.id}>
-            <Link className="font-medium" href="#">
+            <Link className="font-medium" href={`/${item.id}`}>
               <h2 className="text-2xl font-bold tracking-tight leading-6">
-                The Art of the Perfect Cup: A Coffee Lover's Guide
+                {item.title}
               </h2>
             </Link>
-            <p className="text-gray-500 dark:text-gray-400">
-              Posted on August 24, 2023
-            </p>
-            <p>
-              For many people, the day doesn't truly start until they've had
-              their first cup of coffee. Whether it's a rich and velvety latte,
-              a bold and...
-            </p>
+            <p>{item.content}</p>
           </div>
         ))}
       </div>
