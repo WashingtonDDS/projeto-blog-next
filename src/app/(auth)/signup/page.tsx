@@ -2,22 +2,25 @@ import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { createRequestAuth } from "@/utils/createRequest";
+import { redirect } from "next/navigation";
 
 export default function SignUp() {
   const handleFormSignUp = async (form: FormData) => {
     "use server";
-    const newForm = {
+    const newUser = {
       nome: form.get("name"),
       email: form.get("email"),
       senha: form.get("password"),
     };
 
-    if (!newForm.nome || !newForm.email || !newForm.senha) return;
+    if (!newUser.nome || !newUser.email || !newUser.senha) return;
 
     await createRequestAuth("/usuarios", {
       method: "POST",
-      body: JSON.stringify(newForm),
+      body: JSON.stringify(newUser),
     });
+
+    redirect("/signin");
   };
   return (
     <form
