@@ -7,6 +7,11 @@ export async function createRequest(url: string, initialValues: object) {
 }
 
 export async function createRequestAuth(url: string, initialValues: object) {
-  const response = await fetch(`${baseUrlAuth}${url}`, initialValues);
+  const headers = new Headers();
+  headers.append("Content-Type", "application/json");
+  const response = await fetch(`${baseUrlAuth}${url}`, {
+    headers,
+    ...initialValues,
+  });
   return await response.json();
 }

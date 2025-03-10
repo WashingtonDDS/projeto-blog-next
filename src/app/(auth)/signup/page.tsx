@@ -1,14 +1,22 @@
-import { Label } from "@/components/ui/label"
-import { Input } from "@/components/ui/input"
-import { Button } from "@/components/ui/button"
+import { Label } from "@/components/ui/label";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 
 export default function SignUp() {
+  const handleFormSignUp = async () => {
+    "use server";
+  };
   return (
-    <form className="px-4 py-12 space-y-12 md:py-24 md:px-6">
+    <form
+      action={handleFormSignUp}
+      className="px-4 py-12 space-y-12 md:py-24 md:px-6"
+    >
       <div className="mx-auto max-w-sm space-y-6">
         <div className="space-y-2 text-center">
           <h1 className="text-3xl font-bold">Cadastro</h1>
-          <p className="text-gray-500 dark:text-gray-400">Cadastre-se e crie suas transações</p>
+          <p className="text-gray-500 dark:text-gray-400">
+            Cadastre-se e crie suas transações
+          </p>
         </div>
         <div className="space-y-2">
           <Label htmlFor="name">Nome</Label>
@@ -16,7 +24,12 @@ export default function SignUp() {
         </div>
         <div className="space-y-2">
           <Label htmlFor="email">Email</Label>
-          <Input id="email" placeholder="m@example.com" type="email" name="email" />
+          <Input
+            id="email"
+            placeholder="m@example.com"
+            type="email"
+            name="email"
+          />
         </div>
         <div className="space-y-2">
           <Label htmlFor="password">Senha</Label>
