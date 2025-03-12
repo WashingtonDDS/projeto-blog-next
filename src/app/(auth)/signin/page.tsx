@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { ChangeEvent, FormEvent, useState } from "react";
 import { createRequestAuth } from "@/utils/createRequest";
 import { TForm } from "@/types/typeSign";
+import cookies from "js-cookie";
 export default function SignIn() {
   const [form, setForm] = useState<TForm>({
     email: "",
@@ -25,13 +26,15 @@ export default function SignIn() {
 
     if (!form.email || !form.password) return;
 
-    await createRequestAuth("/login", {
+    const response = await createRequestAuth("/login", {
       method: "POST",
       body: JSON.stringify({
         email: form.email,
         senha: form.password,
       }),
     });
+
+    cookies.set("name", "value");
   };
   return (
     <form
@@ -52,11 +55,17 @@ export default function SignIn() {
             placeholder="m@example.com"
             type="email"
             name="email"
+            onChange={handleChangeInput}
           />
         </div>
         <div className="space-y-2">
           <Label htmlFor="password">Senha</Label>
-          <Input id="password" type="password" name="password" />
+          <Input
+            id="password"
+            type="password"
+            name="password"
+            onChange={handleChangeInput}
+          />
         </div>
         <Button className="w-full">Entrar</Button>
       </div>
