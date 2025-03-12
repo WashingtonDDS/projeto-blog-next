@@ -5,7 +5,9 @@ import { ChangeEvent, FormEvent, useState } from "react";
 import { createRequestAuth } from "@/utils/createRequest";
 import { TForm } from "@/types/typeSign";
 import cookies from "js-cookie";
+import { useRouter } from "next/navigation";
 export default function SignIn() {
+  const router = useRouter();
   const [form, setForm] = useState<TForm>({
     email: "",
     password: "",
@@ -34,7 +36,12 @@ export default function SignIn() {
       }),
     });
 
-    cookies.set("name", "value");
+    if (!response) return;
+
+    cookies.set("token", response.token);
+    cookies.set("user", JSON.stringify(response.usuario));
+
+    router.push("/transactions");
   };
   return (
     <form
