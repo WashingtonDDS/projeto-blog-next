@@ -20,6 +20,23 @@ const getTransactions = async () => {
 };
 export async function List() {
   const transactions: TTransaction[] = await getTransactions();
+
+  const calTotals = (items: TTransaction[]) => {
+    return items.reduce((acc, item) => (acc += item.price), 0);
+  };
+
+  const filterTransactions = () => {
+    const incoming = transactions.filter((item) => item.price > 0);
+    const output = transactions.filter((item) => item.price < 0);
+
+    return {
+      total: calTotals(transactions),
+      incoming: calTotals(incoming),
+      output: calTotals(output),
+    };
+  };
+
+  const totals = filterTransactions();
   return (
     <div className="mt-8 overflow-hidden border rounded-lg">
       <Table>
@@ -48,17 +65,17 @@ export async function List() {
         <TableFooter>
           <TableRow>
             <TableCell>Entrada</TableCell>
-            <TableCell className="font-bold">R$ 0</TableCell>
+            <TableCell className="font-bold">{totals.total}</TableCell>
             <TableCell colSpan={3}></TableCell>
           </TableRow>
           <TableRow>
             <TableCell>Saída</TableCell>
-            <TableCell className="font-bold">R$ -2000,00</TableCell>
+            <TableCell className="font-bold">{totals.output}</TableCell>
             <TableCell colSpan={3}></TableCell>
           </TableRow>
           <TableRow>
             <TableCell>Total</TableCell>
-            <TableCell className="font-bold">R$ -2000,00</TableCell>
+            <TableCell className="font-bold">{totals.incoming}</TableCell>
             <TableCell colSpan={3}></TableCell>
           </TableRow>
         </TableFooter>
