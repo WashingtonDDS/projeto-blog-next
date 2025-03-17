@@ -6,7 +6,6 @@ export default function Transactions() {
     <>
       <Modal />
       <List />
-      <div className="mt-8 overflow-hidden border rounded-lg"></div>
     </>
   );
 }
