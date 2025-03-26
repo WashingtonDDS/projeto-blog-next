@@ -10,10 +10,34 @@ import {
 import { AlertDialogAction } from "@/components/ui/alert-dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { createRequest } from "@/utils/createRequest";
 
 export function Form() {
+  const handleFormSubmit = async (form: FormData) => {
+    "use server";
+    const newTransaction = {
+      id: crypto.randomUUID(),
+      description: form.get("description"),
+      price: Number(form.get("price")),
+      dueDate: form.get("dueDate"),
+      status: form.get("status"),
+    };
+
+    if (
+      !newTransaction.description ||
+      !newTransaction.price ||
+      !newTransaction.dueDate ||
+      !newTransaction.status
+    ) {
+      return;
+    }
+    await createRequest("/transactions", {
+      method: "POST",
+      body: JSON.stringify(newTransaction),
+    });
+  };
   return (
-    <form>
+    <form action={handleFormSubmit}>
       <div className="py-2">
         <Label htmlFor="description">Descrição</Label>
         <Input placeholder="descrição" name="description" id="description" />
