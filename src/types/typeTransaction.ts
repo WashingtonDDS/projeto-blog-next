@@ -5,3 +5,8 @@ export type TTransaction = {
   dueDate: string;
   status: string;
 };
+export type TDetailTransactionProps = {
+  params: {
+    id: string;
+  };
+};

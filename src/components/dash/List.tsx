@@ -17,6 +17,9 @@ import Link from "next/link";
 const getTransactions = async () => {
   const response = await createRequest("/transactions", {
     method: "GET",
+    next: {
+      tags: ["get-transactions"],
+    },
   });
   return response;
 };

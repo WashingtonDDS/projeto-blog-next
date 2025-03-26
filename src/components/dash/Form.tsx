@@ -11,6 +11,7 @@ import { AlertDialogAction } from "@/components/ui/alert-dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { createRequest } from "@/utils/createRequest";
+import { revalidateTag } from "next/cache";
 
 export function Form() {
   const handleFormSubmit = async (form: FormData) => {
@@ -18,7 +19,7 @@ export function Form() {
     const newTransaction = {
       id: crypto.randomUUID(),
       description: form.get("description"),
-      price: Number(form.get("price")),
+      price: Number(form.get("price")) * 100,
       dueDate: form.get("dueDate"),
       status: form.get("status"),
     };
@@ -35,6 +36,8 @@ export function Form() {
       method: "POST",
       body: JSON.stringify(newTransaction),
     });
+
+    revalidateTag("get-transactions");
   };
   return (
     <form action={handleFormSubmit}>

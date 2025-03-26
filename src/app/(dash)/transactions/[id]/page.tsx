@@ -1,8 +1,22 @@
-import { CardTitle, CardDescription, CardHeader, CardContent, Card } from "@/components/ui/card"
+import {
+  CardTitle,
+  CardDescription,
+  CardHeader,
+  CardContent,
+  Card,
+} from "@/components/ui/card";
+import { TDetailTransactionProps } from "@/types/typeTransaction";
+import { createRequest } from "@/utils/createRequest";
+const getTransaction = async (id: string) => {
+  const response = await createRequest(`/transactions/${id}`, {
+    method: "GET",
+  });
+  return response;
+};
+export default async function Detail({ params }: TDetailTransactionProps) {
+  const transaction = await getTransaction(params.id);
 
-export default function Detail() {
   return (
-
     <div className="mt-6">
       <Card>
         <CardHeader>
@@ -23,7 +37,5 @@ export default function Detail() {
         </CardContent>
       </Card>
     </div>
-
-  )
+  );
 }
-
