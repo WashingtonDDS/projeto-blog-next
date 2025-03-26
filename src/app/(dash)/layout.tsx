@@ -1,7 +1,9 @@
 import { Header } from "@/components/dash/Header";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import '../globals.css'
+import "../globals.css";
+import ErrorBoundary from "@/components/ErrorBoundary";
+import Error from "./error";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,8 +21,10 @@ export default function RootLayout({
     <html lang="pt-BR">
       <body className={inter.className}>
         <div className="max-w-2xl mx-auto my-8">
-          <Header />
-          {children}
+          <ErrorBoundary fallback={<Error />}>
+            <Header />
+            {children}
+          </ErrorBoundary>
         </div>
       </body>
     </html>
